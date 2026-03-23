@@ -126,6 +126,11 @@ mcpcat.track(server, "proj_0000", {
       apiKey: process.env.POSTHOG_API_KEY,
       host: "https://us.i.posthog.com", // Optional: defaults to US region
     },
+    umami: {
+      type: "umami",
+      websiteId: process.env.UMAMI_WEBSITE_ID,
+      host: "https://cloud.umami.is", // Optional: defaults to Umami Cloud
+    },
   },
 });
 ```
