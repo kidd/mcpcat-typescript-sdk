@@ -4,6 +4,7 @@ import { OTLPExporter } from "./exporters/otlp.js";
 import { DatadogExporter } from "./exporters/datadog.js";
 import { SentryExporter } from "./exporters/sentry.js";
 import { PostHogExporter } from "./exporters/posthog.js";
+import { UmamiExporter } from "./exporters/umami.js";
 
 export class TelemetryManager {
   private exporters: Map<string, Exporter> = new Map();
@@ -37,6 +38,8 @@ export class TelemetryManager {
         return new SentryExporter(config as any);
       case "posthog":
         return new PostHogExporter(config as any);
+      case "umami":
+        return new UmamiExporter(config as any);
       default:
         writeToLog(`Unknown exporter type: ${config.type}`);
         return null;
