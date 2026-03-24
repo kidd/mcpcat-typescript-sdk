@@ -103,6 +103,7 @@ export class UmamiExporter implements Exporter {
         : `/${eventName}`,
       website: this.websiteId,
       name: eventName,
+      tag: "mcp",
       data,
     };
 
