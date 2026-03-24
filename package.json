@@ -20,7 +20,7 @@
     "test:compatibility": "vitest run src/tests/mcp-version-compatibility.test.ts",
     "lint": "eslint src/",
     "typecheck": "tsc --noEmit",
-    "prepare": "husky",
+    "prepare": "husky && npm run build",
     "prepublishOnly": "pnpm run build && pnpm run test && pnpm run lint && pnpm run typecheck"
   },
   "keywords": [

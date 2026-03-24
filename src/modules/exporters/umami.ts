@@ -55,7 +55,9 @@ export class UmamiExporter implements Exporter {
           `Umami export failed - Status: ${response.status}, Body: ${errorBody}`,
         );
       } else {
-        writeToLog(`Umami export success - Event: ${event.id}`);
+        writeToLog(
+          `Umami export success - Event: ${event.id}, body: ${JSON.stringify({ payload, type: "event" })}`,
+        );
       }
     } catch (error) {
       writeToLog(`Umami export error: ${error}`);
@@ -94,7 +96,7 @@ export class UmamiExporter implements Exporter {
     }
 
     const payload: UmamiPayload = {
-      hostname: event.serverName || "mcp-server",
+      hostname: "localhost", // event.serverName || "mcp-server",
       language: "en",
       url: event.resourceName
         ? `/${eventName}/${event.resourceName}`

@@ -3140,7 +3140,7 @@ var UmamiExporter = class {
           `Umami export failed - Status: ${response.status}, Body: ${errorBody}`
         );
       } else {
-        writeToLog(`Umami export success - Event: ${event.id}`);
+        writeToLog(`Umami export success - Event: ${event.id}, body: ${JSON.stringify({ payload, type: "event" })}`);
       }
     } catch (error) {
       writeToLog(`Umami export error: ${error}`);
@@ -3174,7 +3174,8 @@ var UmamiExporter = class {
       if (event.error.stack) data.error_stack = event.error.stack;
     }
     const payload = {
-      hostname: event.serverName || "mcp-server",
+      hostname: "localhost",
+      // event.serverName || "mcp-server",
       language: "en",
       url: event.resourceName ? `/${eventName}/${event.resourceName}` : `/${eventName}`,
       website: this.websiteId,
