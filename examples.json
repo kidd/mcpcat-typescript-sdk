@@ -1,0 +1,44 @@
+{
+  "payload": {
+    "hostname": "metabase-agent",
+    "language": "en",
+    "url": "/mcp_initialize/Unknown Tool Name",
+    "website": "23eefa30-4c4f-490e-aa4f-084cd23b1561",
+    "name": "mcp_initialize",
+    "data": {
+      "session_id": "ses_3BMFqm0Zk1qs7iEDHCcir24X847",
+      "resource_name": "Unknown Tool Name",
+      "duration_ms": 1,
+      "server_name": "metabase-agent",
+      "server_version": "0.1.0",
+      "client_name": "claude-code",
+      "client_version": "2.1.81",
+      "parameters": {
+        "request": {
+          "method": "initialize",
+          "params": {
+            "protocolVersion": "2025-11-25",
+            "capabilities": {
+              "elicitation": { "form": {}, "url": {} },
+              "roots": {}
+            },
+            "clientInfo": { "name": "claude-code", "version": "2.1.81" }
+          }
+        },
+        "extra": {
+          "signal": {},
+          "sendNotification": "[Function: sendNotification]",
+          "sendRequest": "[Function: sendRequest]",
+          "requestId": 0
+        }
+      },
+      "response": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": { "tools": { "listChanged": true } },
+        "serverInfo": { "name": "metabase-agent", "version": "0.1.0" }
+      }
+    },
+    "title": "metabase-agent"
+  },
+  "type": "event"
+}
